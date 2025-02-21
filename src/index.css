@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-purple: #b026ff;
+  --neon-blue: #4d4dff;
+  --neon-glow: 0 0 10px var(--neon-purple),
+               0 0 20px var(--neon-purple),
+               0 0 30px var(--neon-blue),
+               0 0 40px var(--neon-blue);
+}
+
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .neon-card {
+    box-shadow: var(--neon-glow);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .neon-card:hover {
+    box-shadow: 0 0 15px var(--neon-purple),
+                0 0 30px var(--neon-purple),
+                0 0 45px var(--neon-blue),
+                0 0 60px var(--neon-blue);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 5px var(--neon-purple),
+                 0 0 10px var(--neon-purple),
+                 0 0 15px var(--neon-blue);
+  }
+
+  .light-card {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-500;
+}
