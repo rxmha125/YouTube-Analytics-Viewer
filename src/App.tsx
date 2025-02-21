@@ -51,11 +51,15 @@ function App() {
         <div className="flex flex-col items-center mb-12">
           <div className={`flex items-center gap-3 mb-8 ${darkMode ? 'neon-text' : ''}`}>
             <Youtube className={`${darkMode ? 'text-purple-400' : 'text-purple-600'} transition-colors duration-300`} size={40} />
-            <h1 className={`text-4xl font-bold transition-colors duration-300 ${
-              darkMode ? 'text-white' : 'text-gray-900'
-            }`}>
-              YouTube Viewer
-            </h1>
+            <p 
+  onClick={() => window.location.href = '/'} 
+  className={`text-4xl font-bold cursor-pointer transition-colors duration-300 ${
+    darkMode ? 'text-white' : 'text-gray-900'
+  }`}
+>
+  YouTube Viewer
+</p>
+
           </div>
           <SearchBar onSearch={handleSearch} />
           <div className="mt-6">
